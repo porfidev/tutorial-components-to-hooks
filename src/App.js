@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import CustomForm from './components/CustomForm.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  onSubmitForm = (dataForm) => {
+    console.log('ENVIANDO DATOS', dataForm);
+    /// usar aquí axios o fetch
+  };
+
+  render() {
+    return (
+      <div className="form-container">
+        <CustomForm onSubmitForm={this.onSubmitForm} />
+      </div>
+    );
+  }
 }
 
 export default App;
